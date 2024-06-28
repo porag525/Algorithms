@@ -25,10 +25,10 @@ Space Complexity: O(V)
 using namespace std;
 const int N = 1e5;
 int visited[N];
+stack<int>s;
 vector<int> adj_list[N];
 void DFS(int node)
 {
-    cout << node << endl;
     visited[node] = 1;
     for (int adj_node : adj_list[node])
     {
@@ -37,18 +37,37 @@ void DFS(int node)
             DFS(adj_node);
         }
     }
+    s.push(node);
+}
+void topological_sort(int n)
+{
+   
+    for(int i=0;i<n;i++)
+    {
+        if(!visited[i])
+        {
+            DFS(i);
+        }
+    }
+    while(!s.empty())
+    {
+        cout<<s.top()<<" ";
+        s.pop();
+
+    }
 }
 int main()
 {
     int nodes, edges;
+    cout<<"Enter the number of nodes and edges : ";
     cin >> nodes >> edges;
+    cout<<"Enter the egde list : "<<endl;
     for (int i = 0; i < edges; i++)
     {
         int u, v;
         cin >> u >> v;
         adj_list[u].push_back(v);
-        adj_list[v].push_back(u);
     }
-    int src = 2;
-    DFS(src);
+    cout<<"Topological Sorted Order : ";
+    topological_sort(nodes);  
 }

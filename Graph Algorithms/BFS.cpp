@@ -4,8 +4,10 @@ Author : Moniruzzaman Porag
 Date of Creation: 23 January 2024
 
            ########################
-           # Breadth First Search #
+           # Dijkstar's Algorithm #
            ########################
+Dijkstra's algorithm (/ˈdaɪkstrəz/ DYKE-strəz)
+is an algorithm for finding the shortest paths between nodes in a weighted graph.
 -----------------
 Time Complexity:
 -----------------

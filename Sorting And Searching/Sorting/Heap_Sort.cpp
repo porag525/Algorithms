@@ -8,7 +8,7 @@ Date of Creation: 20 January 2024
            #  Heap Sort #
            ##############
 -----------------
-Time Complexity:
+Time Complexity:0
 -----------------
 Best Case :  Ω(nlogn)
 Average Case :  θ(nlogn)
