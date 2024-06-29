@@ -25,27 +25,29 @@ void Union(int a, int b)
 }
 int main()
 {
-    int n,e;
-    cin>>n>>e;
-    vector<pair<int,pair<int,int>>>edges;
-    for(int i=0;i<e;i++)
+    int n, e;
+    cin >> n >> e;
+    vector<pair<int, pair<int, int>>> edges;
+    for (int i = 0; i < e; i++)
     {
-        int u,v,w;
-        cin>>u>>v>>w;
-        edges.push_back({w,{u,v}});
+        int u, v, w;
+        cin >> u >> v >> w;
+        edges.push_back({w, {u, v}});
     }
-    sort(edges.begin(),edges.end());
-    for(int i=1;i<=n;i++)make(i);
-    int total_cost=0;
-    for(auto &edges:edges)
+    sort(edges.begin(), edges.end());
+    for (int i = 1; i <= n; i++)
+        make(i);
+    int total_cost = 0;
+    for (auto &edges : edges)
     {
-        int wt=edges.first;
-        int u=edges.second.first;
-        int v=edges.second.second;
-        if(find(u)==find(v))continue;
-        Union(u,v);
-        total_cost+=wt;
-        cout<<u<<" "<<v<<endl;
+        int wt = edges.first;
+        int u = edges.second.first;
+        int v = edges.second.second;
+        if (find(u) == find(v))
+            continue;
+        Union(u, v);
+        total_cost += wt;
+        cout << u << " " << v << endl;
     }
-    cout<<total_cost<<endl;
+    cout << total_cost << endl;
 }
